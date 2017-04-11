@@ -42,12 +42,29 @@ Produire des données en Sciences de l'Antiquité avec Perseids
 ## Ses objectifs
 
 - Introduire dans les cours licence/master la notion de publication
-- Arrêter d'abandonner les données de l'enseignement
+- Arrêter d'abandonner les données de l'enseignement et de la recherche
 - Aider des projets ou des chercheur.se.s à mettre en place leur recherche dans un ENT
 
 ???
 
 Commencer par un rapide condensé de ce qu'est Perseids
+Contexte Nord-Américain (minor, major, carrières diverses)
+
+---
+class: top
+
+Disclaimer
+==========
+
+![Je ne suis pas de Perseids](images/not-from-perseids.png)
+
+???
+
+- Avant toute chose, je souhaiterai avertir quant à mes compétences. 
+- Je ne suis pas un développeur actuel de Perseids. 
+- Je travaille avec cet outil pour le Treebank
+- je collabore avec leurs développeuses et développeur
+- Une bonne partie des logiciels utilisés comme base sont de moi, sauf Sosol
 
 ---
 ## Comment fonctionne la publication d'un article universitaire
@@ -76,7 +93,7 @@ Une API, Application Programming Interface, permet à une machine de communiquer
 ---
 class: top
 
-## API vs. Interface Utilisateur
+## API vs. Interface Utilisateur [1]
 
 [Homer, Odyssey, 9.1](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0135%3Abook%3D9%3Acard%3D1)
 
@@ -89,21 +106,21 @@ Voici une interface utilisateur basique, connue de tous, quoiqu'un peu vieillie
 ---
 class: top
 
-## API vs. Interface Utilisateur
+## API vs. Interface Utilisateur [2]
 
 ![http://www.perseus.tufts.edu/hopper/help/texts](images/texthelp1.png)
 
 ---
 class: top
 
-## API vs. Interface Utilisateur
+## API vs. Interface Utilisateur [3]
 
 ![http://www.perseus.tufts.edu/hopper/help/texts](images/texthelp2.png)
 
 ---
 class: top
 
-## API vs. Interface Utilisateur (4)
+## API vs. Interface Utilisateur [4]
 
 [http://ctsstage.dh.uni-leipzig.de/api/cts?request=GetPassagePlus&urn=urn:cts:greekLit:tlg0012.tlg002.perseus-grc2:9.1-9.46](http://ctsstage.dh.uni-leipzig.de/api/cts?request=GetPassagePlus&urn=urn:cts:greekLit:tlg0012.tlg002.perseus-grc2:9.1-9.46)
 
@@ -294,6 +311,45 @@ Les outils de Perseids
 Ici dans le cadre d'une édition, c'est la possibilité de travailler avec un système de Peer Review directement avec un-e professeur-e, un-e ingenieur-e.
 
 ---
+class: top, workflow-with-logo
+
+Analyser [1]
+===========
+
+.logo[![Logo Capitains](images/capitains.png)]
+
+Perseids propose des outils d'annotations grammaticales basés sur les textes suivant les guidelines CapiTainS. Les textes sont fournis via des API CTS puis pour leur première digestion par Arethusa, sont tokenizer (couper par mots et phrases).
+
+![](images/Perseids-Capitains-Arethusa.png)
+
+---
+class: top
+Analyser [2]
+============
+
+L'analyse en treebank permet de reconstruire l'architecture de la phrase à travers le phénomène de dépendance. La phrase est pensée comme un arbre où chaque élément dépend d'un autre sauf les éléments racines.
+
+Si le concept de treebank est "universel", les grammaires, les ensembles de marqueurs (tagset) sont divers : sur Perseids, 8 grammaires sont disponibles.
+
+![](images/_-_2017-04-11_15.32.26.png)
+
+???
+
+Problème des grammaires. Il est possible, et facile techniquement, de produire une grammaire
+
+---
+class: top
+
+Analyser [3]
+============
+
+Le treebank est utilisé sur Perseids principalement dans l'optique de proposer un nouveau travail qui vient s'adosser à la traduction : celui de l'analyse grammaticale. Ainsi, le travail de compréhension des structures et celui de translation de celles-ci sont divisés en deux étapes évaluables séparément. 
+
+Le treebank via Arethusa permet de stocker deux types d'informations : les analyses morphologiques et syntaxiques. [Lien démo](http://sosol.perseids.org/sosol/publications/24371/treebank_cite_identifiers/36283/preview) [, Visualisation](http://www.perseids.org/tools/arethusa/app/#/perseids?chunk=1&mode=viewer&doc=36283)
+
+Tous les treebanks sont disponibles facilement sur le site Perseids (Edit XML / Download). Il est possible de demander à Perseids d'avoir un [projet Github](https://github.com/perseids-proxy-user/) de mis à jour 'automatiquement'.
+
+---
 
 class: top, workflow-with-logo
 Annoter [1]
@@ -321,11 +377,1002 @@ class: top
 Annoter [3]
 ===========
 
-A l'heure actuelle, les caractérisations sont limitées. Le travail est orienté vers le Social Network, la caractérisation de personnages dans le texte.
+A l'heure actuelle, les caractérisations sont limitées. Le travail est orienté vers le Social Network, la caractérisation de personnages dans le texte. [Exemple](http://cts.perseids.org/read/latinLit/phi1294/phi002/perseus-lat2/7.67)
 
 .left[![](images/plokfig1.png)]
 
 ![](images/plokfig2.png)
+
+---
+class: top
+Annoter [4]
+===========
+
+```json
+{
+  "head" : {
+    "vars" : [ "s", "p", "o", "g" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/source"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#Annotation"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99-bond-048e"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasCharacter"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#SpecificResource"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#target-05fb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2.7.67"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#target-05fb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSource"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/sosol/users/Thibault%20Cl%C3%A9rice"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#serializedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasBody"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825-bond-26a9"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasCharacter"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this is described as 'undefined' in "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/title"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#sel-0703"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#target-05fb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSelector"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#target-4169"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasTarget"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#identifying"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#motivatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#TextQuoteSelector"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#sel-17a1"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasBody"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp",
+        "type" : "literal",
+        "value" : "2017-04-11T12:58:50.300Z"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedAt"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#sel-17a1"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#target-0236"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSelector"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#identifying"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#motivatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "                          "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#sel-17a1"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#prefix"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2:7.67@tribas"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99-bond-048e"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasGreek"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : " tribas Philaenis Et tentigine s"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#sel-17a1"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#suffix"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#target-0236"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasTarget"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#Annotation"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#SpecificResource"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#target-4169"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/source"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#TextQuoteSelector"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#sel-6951"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this is described as 'undefined' in "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/title"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this is described as 'undefined' in "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/title"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#serializedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2.7.67"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#target-4169"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSource"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#sel-6951"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#target-4169"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSelector"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#serializedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/sosol/users/Thibault%20Cl%C3%A9rice"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/people/smith:philaenis-1#this"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb-bond-131b"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasCharacter"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#TextQuoteSelector"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#sel-0703"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "https://github.com/perseids-project/plokamos"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://purl.org/dc/terms/source"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2.7.67"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#target-0236"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasSource"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp",
+        "type" : "literal",
+        "value" : "2017-04-11T12:46:41.371Z"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedAt"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "               Pedicat pueros "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#sel-6951"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#prefix"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#Annotation"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2:7.67@virile"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb-bond-131b"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasGreek"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#SpecificResource"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#target-0236"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/sosol/users/Thibault%20Cl%C3%A9rice"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "Pedicat pueros"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825#sel-17a1"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#exact"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#int",
+        "type" : "literal",
+        "value" : ""
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb-bond-131b"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasEnglish"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "tribas"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#sel-6951"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#exact"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasBody"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp",
+        "type" : "literal",
+        "value" : "2017-04-11T12:42:32.490Z"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#annotatedAt"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "urn:cts:latinLit:phi1294.phi002.perseus-lat2:7.67.1@pedicat pueros"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825-bond-26a9"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasGreek"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : ".                   \tCatalo"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#sel-0703"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#suffix"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#target-05fb"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#hasTarget"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#int",
+        "type" : "literal",
+        "value" : ""
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99-bond-048e"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasEnglish"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "virile"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#sel-0703"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#exact"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "o" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#int",
+        "type" : "literal",
+        "value" : ""
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825-bond-26a9"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://data.perseids.org/characterization#hasEnglish"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#identifying"
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec5707da42825"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#motivatedBy"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : " Philaenis Et tentigine saevior "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec57028238d99#sel-6951"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#suffix"
+      }
+    }, {
+      "g" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/graphs/characterizations"
+      },
+      "o" : {
+        "type" : "literal",
+        "value" : "aeni, Cunnum lingere quae putas "
+      },
+      "s" : {
+        "type" : "uri",
+        "value" : "http://data.perseus.org/collections/urn:cite:perseus:pdljann.1eacec573d90e0bb#sel-0703"
+      },
+      "p" : {
+        "type" : "uri",
+        "value" : "http://www.w3.org/ns/oa#prefix"
+      }
+    } ]
+  }
+}
+```
 
 ---
 class: top
@@ -342,3 +1389,117 @@ Annoter [4]
 ## Connaissances intéressantes à avoir
 
 1. XSL/XQuery/Langage web (si volonté de publier en ligne)
+2. Langage de Script (Python, R) pour exploiter les données
+3. Sparql (Pour interroger la base originale)
+
+---
+Perseids, pour quoi faire ?
+===========================
+
+1. Enseigner
+2. Brouilloner
+3. Collaborer
+4. Produire
+	1. Valorisation du patrimoine, de la recherche
+		- [Journey of the Hero](http://joth.perseids.org/joth.html)
+		- [Aperire](http://aperire.herokuapp.com/)
+	2. Produire d'autres données
+	3. Recherche linguistique, sémantique
+
+
+???
+
+- Cadre de Perseids = Produire des données = Enseigner
+- MAIS
+- Il est possible de réutiliser les données.
+- Des compétences en programmations peuvent étre nécessaires quand il s'agit de réutiliser les données. 
+- 
+
+---
+Produire : Valorisation
+=======================
+
+- Changement de contexte de la recherche francaise : les financements demandent de la visibilité en retour
+
+Catégories d'exploitation et possibilités :
+
+- Apprentissage de la langue (Secondaire, Universitaire) -> Treebank
+- Apprentissage de l'histoire -> Annotations
+- Apprentissage de la culture -> Annotations
+- Lecture de textes, de traductions, de commentaires -> Edition
+
+---
+Valorisation : Journey of the Hero
+==================================
+
+[Journey of the Hero](http://joth.perseids.org/joth.html)
+
+- Fonctionne avec [Pleiades](https://pleiades.stoa.org/)
+- Réutilise uniquement des données ouvertes
+- Lien entre textes et lieux, entre textes et textes = Annotations
+- Reseau social = Annotations
+
+---
+Valorisation : Aperire
+==================================
+
+[Aperire](http://aperire.herokuapp.com) - [Code source](https://github.com/PonteIneptique/aperire)
+
+- Fonctionne avec Arethusa
+- Très simple à mettre en place en "bricolant"
+
+??? 
+
+- Expliquer Heroku
+- Montrer le code source
+
+---
+Produire : Aider à la production d'autres données
+=================================================
+
+---
+Produire : Valeur sémantique
+============================
+
+---
+Produire : Exemples de sujets résolus [1]
+=========================================
+
+(Sujet : Marie-Claire Beaulieu)
+
+Plato’s writings, although they are carefully crafted, are meant to sound conversational. Based on our readings of the Apology and the treebanks you have built, discuss the tension between conversational and periodic[1] sentence structure in Plato. In the sentence you have treebanked, what specific effect does Plato achieve with this style? Where does he lay the emphasis, and how?
+
+Write a short paper (1000-1500 words) discussing this question and using your treebanks as evidence (insert links to specific treebanks as references, or use statistics and other such data derived from your trees)
+
+---
+Produire : Exemples de sujets résolus [2]
+=========================================
+
+(Sujet : Marie-Claire Beaulieu)
+
+Plato’s writings, although they are carefully crafted, are meant to sound conversational. Based on our readings of the Apology and the treebanks you have built, discuss the tension between conversational and periodic[1] sentence structure in Plato. In the sentence you have treebanked, what specific effect does Plato achieve with this style? Where does he lay the emphasis, and how?
+
+Write a short paper (1000-1500 words) discussing this question and using your treebanks as evidence (insert links to specific treebanks as references, or use statistics and other such data derived from your trees)
+
+---
+Conclusion [1]
+==========
+
+Perseids est
+
+- Majoritairement orienté pour l'enseignement
+- Encore en développement
+
+Mais surtout, il peut s'avérer une três bonne ressource
+
+- dans le cadre d'un mémoire (Annoter, produire les données pour analyser la langue)
+- dans le cadre d'une préparation de concours (alignement de traduction, treebank pour préparer les textes)
+- dans le cadre d'une thèse
+- dans le cadre d'un projet collaboratif
+
+---
+
+Conclusion [2]
+==============
+
+Quels sont vos besoin et vos projets ?

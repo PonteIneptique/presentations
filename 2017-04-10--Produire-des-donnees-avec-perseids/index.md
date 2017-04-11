@@ -17,9 +17,9 @@ Produire des données en Sciences de l'Antiquité avec Perseids
 	3. API
 	4. Standards
 - Les outils de Perseids
-	1. Transcription
-	2. Plokamos et l'annotation de textes
-	2. Arethusa & le treebank
+	1. Éditer
+	2. Annoter (Plokamos)
+	2. Analyser (Arethusa)
 - Utiliser les données de Perseids : des exemples
 	1. Valorisation du Patrimoine
 	2. Apprendre le latin et le grec à une machine
@@ -52,7 +52,7 @@ Commencer par un rapide condensé de ce qu'est Perseids
 ---
 ## Comment fonctionne la publication d'un article universitaire
 
-![http://thescipub.com/](images/thescipub-workflow.png)
+.left[![http://thescipub.com/](images/thescipub-workflow.png)]
 
 Le processus de publication est complètement intégré à Perseids et est réutilisé par d'autres projets tels que Eagle-network.eu et Syriaca.org.
 
@@ -224,13 +224,13 @@ Les outils de Perseids
 ======================
 
 1. Publier
-2. Annoter
-3. Analyser
+2. Analyser
+3. Annoter
 
 ---
 
-Publier [1]
-===========
+Éditer [1]
+==========
 
 ## Status
 - Limité à la publication basée sur les textes disponibles
@@ -238,21 +238,22 @@ Publier [1]
 - Traduire et/ou éditer des inscriptions, des manuscrits
 
 ## Principal utilisation : 
-- Enseignement
+- Enseignement de la papyrologie, de l'édition (manuscrits et inscriptions)
+- Enseignement de la TEI, d'Epidoc
 
 ---
 
-Publier [2]
-===========
+Éditer [2]
+==========
 
 [Edition d'un Miscellany](http://sosol.perseids.org/sosol/publications/35125/epi_cts_identifiers/46932/editxml)
 
-![](images/Perseids_epi_cts_identifiers_-_editxml_-_2017-04-10_16.31.06.png)
+.left[![](images/Perseids_epi_cts_identifiers_-_editxml_-_2017-04-10_16.31.06.png)]
 
 ---
 
-Publier [3]
-===========
+Éditer [3]
+==========
 
 ```xml
 
@@ -269,3 +270,75 @@ Publier [3]
 </lg>
 </div>
 ```
+
+---
+
+Éditer [4]
+==========
+
+## Réutilisation des données ?
+
+1. Publier (Y compris chez des projets en ligne ? Exemple : [Vie de Saint Grégoire sur Hyperdonat](http://hyperdonat.huma-num.fr/editions/html/Gregoire.html))
+2. Commenter, conserver ses notes sur le texte dans le cadre de sa recherche (`<note>`)
+3. Recherche plein texte
+4. OCR si utilisation des images
+
+## Connaissances intéressantes à avoir
+
+1. XSL/XQuery
+2. Langage web (si volonté de publier en ligne)
+3.
+
+???
+
+Ici dans le cadre d'une édition, c'est la possibilité de travailler avec un système de Peer Review directement avec un-e professeur-e, un-e ingenieur-e.
+
+---
+
+class: top, workflow-with-logo
+Annoter [1]
+===========
+
+.logo[![Logo Capitains](images/capitains.png)]
+
+Perseids possède sa propre interface de lecture de textes, basés sur les textes suivant les guidelines CapiTainS. Cette interface est basé sur différents logiciels qui permettent de faire fonctionner le site web.
+
+![](images/Perseids-Capitains.png)
+
+---
+class: top
+Annoter [2]
+===========
+
+Plokamos permet d'annoter des morceaux de textes avec des triplets. Un triplet est basé sur la forme "sujet-verbe-objet"
+
+Les triplets représentent la forme minimale de description disponible.
+
+![](images/Triplet.png)
+
+---
+class: top
+Annoter [3]
+===========
+
+A l'heure actuelle, les caractérisations sont limitées. Le travail est orienté vers le Social Network, la caractérisation de personnages dans le texte.
+
+.left[![](images/plokfig1.png)]
+
+![](images/plokfig2.png)
+
+---
+class: top
+Annoter [4]
+===========
+
+## Réutilisation des données ?
+
+1. Publier, Valoriser
+2. Visualiser les relations des personnages dans un texte
+3. Visualiser les caractérisations des personnages dans un texte
+
+
+## Connaissances intéressantes à avoir
+
+1. XSL/XQuery/Langage web (si volonté de publier en ligne)

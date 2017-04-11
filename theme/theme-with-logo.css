@@ -98,8 +98,6 @@ img {
     vertical-align: middle;
     max-height: 500px;
     display: block;
-    float:left;
-    margin-right: 1em;
     max-width: 100%;
 }
 
@@ -203,4 +201,15 @@ a {
 }
 p {
     margin:0.3em;
+}
+
+.workflow-with-logo .logo img {
+	width: 100px;
+	float:left;
+	margin-right: 1em;
+}
+
+.left img {
+	float:left;
+	margin-right: 1em;
 }

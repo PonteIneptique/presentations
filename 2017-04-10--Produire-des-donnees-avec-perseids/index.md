@@ -1404,7 +1404,10 @@ Perseids, pour quoi faire ?
 		- [Journey of the Hero](http://joth.perseids.org/joth.html)
 		- [Aperire](http://aperire.herokuapp.com/)
 	2. Produire d'autres données
-	3. Recherche linguistique, sémantique
+	3. Analyse de la langue
+	4. Recherche linguistique, sémantique
+	5. Exemples de sujets résolus
+	6. Exemples de sujets probables
 
 
 ???
@@ -1454,18 +1457,61 @@ Valorisation : Aperire
 - Montrer le code source
 
 ---
-Produire : Aider à la production d'autres données
-=================================================
+Produire : Aider à la production d'autres données [1]
+=====================================================
+
+Machine Learning:
+
+- Apprendre à une machine à produire des analyses que les êtres humains font
+- Permet de produire des données sans être humain : pratique pour lemmatiser les centaines de milliers de textes Latins ou Grecs qui existent !
+
+Utilisations : 
+
+- OCR
+- Productions de données linguistiques (lemmatisation, entités nommées, etc.)
 
 ---
-Produire : Valeur sémantique
-============================
+Produire : Aider à la production d'autres données [2]
+=====================================================
+
+Problème : le machine learning a besoin de BEAUCOUP de données.
+
+![http://www.nltk.org/images/supervised-classification.png](http://www.nltk.org/images/supervised-classification.png)
+
+???
+
+Attention : machine learning supervisé !
+
+---
+Produire : Aider à la production d'autres données [3]
+=====================================================
+
+[OCRiser des manuscrits](https://graal.hypotheses.org/786)
+
+![](images/Homemade_manuscript_OCR_(1)_OCRopy_Sacré_Gr@@l_-_2017-04-11_17.46.07.png)
+
+---
+Produire : Aider à la production d'autres données [3]
+=====================================================
+
+Entraîner un lemmatiseur : 
+
+- [Réutiliser les données de Perseids](https://github.com/PonteIneptique/training-pandora-latin-tb)
+- [Pandora](https://github.com/hipster-philology)
+
+---
+Produire : Analyse de la langue
+===============================
+
+- [Différentes analyses du langages : distance entre les mots](https://github.com/PonteIneptique/thesis/blob/master/1%20-%20Syntax.ipynb)
+
+---
+Produire : Valeur sémantique : daimon
+=====================================
 
 ---
 Produire : Exemples de sujets résolus [1]
 =========================================
-
-(Sujet : Marie-Claire Beaulieu)
 
 Plato’s writings, although they are carefully crafted, are meant to sound conversational. Based on our readings of the Apology and the treebanks you have built, discuss the tension between conversational and periodic[1] sentence structure in Plato. In the sentence you have treebanked, what specific effect does Plato achieve with this style? Where does he lay the emphasis, and how?
 
@@ -1475,11 +1521,20 @@ Write a short paper (1000-1500 words) discussing this question and using your tr
 Produire : Exemples de sujets résolus [2]
 =========================================
 
-(Sujet : Marie-Claire Beaulieu)
+Fourth–century  Attic epitaphs are composed in dactylic hexameters, elegiac couplets, or pentameters awkwardly followed by either a single hexameter or even another pentameter
 
-Plato’s writings, although they are carefully crafted, are meant to sound conversational. Based on our readings of the Apology and the treebanks you have built, discuss the tension between conversational and periodic[1] sentence structure in Plato. In the sentence you have treebanked, what specific effect does Plato achieve with this style? Where does he lay the emphasis, and how?
+- Can we get more granular data on these cases of enjambment?
+- How does the enjambment figure within the overall rhythm and structure of the poem?
+- What does this data reveal about the status of these “awkward” metrical patterns?
 
-Write a short paper (1000-1500 words) discussing this question and using your treebanks as evidence (insert links to specific treebanks as references, or use statistics and other such data derived from your trees)
+---
+Produire : Exemples de sujets probables
+=======================================
+
+- Quelle est la différence entre les réseaux des différentes Médées ?
+- Comment change les charactérisations des personnages principaux au fil de l'évolution du texte ?
+- Quelles actions subissent et produisent les personnages d'un texte ?
+- Quels sont
 
 ---
 Conclusion [1]

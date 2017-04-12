@@ -52,10 +52,10 @@ class: top
 
 ## Administrativement
 
-- financé par la A. W. Mellon Fundation
+- financé par la A. W. Mellon Fundation, NEH et Tufts
 - monté à Tufts
 - enfant/frère de la Perseus Digital Library
-- dans sa deuxième phase (1ère phase de X ans, 2ème depuis octobre sur X ans)
+- dans sa troisième phase (2 ans/phase)
 - dirigé par Marie-Claire Beaulieu et Bridget Almas
 
 ## Ses objectifs
@@ -75,7 +75,7 @@ class: top
 
 .left[![http://thescipub.com/](images/thescipub-workflow.png)]
 
-Le processus de publication est complètement intégré à Perseids et est réutilisé par d'autres projets tels que Eagle-network.eu et Syriaca.org.
+Le processus de publication est complètement intégré à Perseids et est réutilisé par d'autres projets tels que Eagle-network.eu, Syriaca.org, Sematia.
 
 ???
 
@@ -236,10 +236,11 @@ On dénombre dans le monde des sciences de l'antiquités plusieurs standards d'A
 - API liées aux SIG ?
 - Sparql : interroger des bases de données de manière standard (Quel âge avait Seneque quand il est mort ?)
 
-Et quelques formats :
+Et quelques "formats" :
 - TEI ou Epidoc pour partager des contenus textuels
 - GEOJson polur partager des données géographiques
 - RDF (Turtle, XML, N3, etc.)
+- OpenAnnotation
 
 ---
 class: top
@@ -256,7 +257,7 @@ class: top
 ==========
 
 ## Status
-- Limité à la publication basée sur les textes disponibles
+- Limité à la publication basée sur les textes pré-identifiés
 - Objectif d'ouvrir pour publier selon les normes CapiTainS (Quelque soit le type de texte et la langue !)
 - Traduire et/ou éditer des inscriptions, des manuscrits
 
@@ -334,7 +335,7 @@ Analyser [2]
 
 L'analyse en treebank permet de reconstruire l'architecture de la phrase à travers le phénomène de dépendance. La phrase est pensée comme un arbre où chaque élément dépend d'un autre sauf les éléments racines.
 
-Si le concept de treebank est "universel", les grammaires, les ensembles de marqueurs (tagset) sont divers : sur Perseids, 8 grammaires sont disponibles.
+Si le concept de treebank est "universel", les grammaires, les ensembles de marqueurs (tagset) sont divers : sur Perseids, 8 grammaires sont disponibles au choix, mais beaucoup plus sont disponibles sur [demande](https://github.com/alpheios-project/arethusa-configs/tree/master/configs).
 
 ![](images/_-_2017-04-11_15.32.26.png)
 
@@ -1442,7 +1443,9 @@ class: top
 Valorisation : Journey of the Hero
 ==================================
 
-[Journey of the Hero](http://joth.perseids.org/joth.html) - [Source API](https://github.com/perseids-project/perseids-client-apps-joth) - [Source UI](https://github.com/perseids-project/gapvis/tree/joth)
+[Journey of the Hero](http://joth.perseids.org/joth.html) - [Source API](https://github.com/perseids-project/perseids-client-apps-joth) - [Source UI](https://github.com/perseids-project/journey-of-the-hero)
+
+#### Bridget Almas, Thibault Clerice, & Marie-Claire Beaulieu. (2017). perseids-project/journey-of-the-hero: Release 1.0.0 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.288156
 
 - Fonctionne avec [Pleiades](https://pleiades.stoa.org/)
 - Réutilise uniquement des données ouvertes
@@ -1726,6 +1729,7 @@ Conclusion [1]
 Perseids est
 
 - Majoritairement orienté pour l'enseignement
+- Utilisé par des chercheurs (*eg.* [V.B. Gorman & R. J. Gorman](https://www.degruyter.com/downloadpdf/j/opli.2016.2.issue-1/opli-2016-0026/opli-2016-0026.pdf))
 - Encore en développement
 
 Mais surtout, il peut s'avérer une três bonne ressource
@@ -1744,6 +1748,22 @@ Mais surtout, il peut s'avérer une três bonne ressource
 ---
 class: top
 Conclusion [2]
+==============
+
+- Summer Schools : [edeen.sciencesconf.org](http://edeen.sciencesconf.org) , [digital.humanities.ox.ac.uk/dhoxss](http://digital.humanities.ox.ac.uk/dhoxss)
+- MOOC : [Statistiques](https://mooc-francophone.com/cours/mooc-introduction-statistique-r/), [Machine Learning](https://fr.coursera.org/learn/machine-learning)
+- Livres : 
+	- F. Moretti, *Distant Reading*
+	- C. Manning & H. Schuetze, *Foundations of Statistical Natural Language Processing*
+	- Bird et al., *Natural language processing with Python*
+	- Bamman, David, and Gregory Crane. “Computational Linguistics and Classical Lexicography” 3, no. 1 (Changing the Center of Gravity: Transforming Classical Studies Through Cyberinfrastructure2009). http://www.digitalhumanities.org/dhq/vol/003/1/000033/000033.html.
+McGillivray, Barbara. Methods in Latin Computational Linguistics. BRILL, 2013.
+
+- Coopération
+
+---
+class: top
+Conclusion [3]
 ==============
 
 - Quelles données penser vous perdre dans votre approche actuelle ?

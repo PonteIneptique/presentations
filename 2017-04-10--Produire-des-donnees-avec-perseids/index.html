@@ -219,12 +219,29 @@ p {
 	float:left;
 	margin-right: 1em;
 }
+.right img {
+	float:right;
+	margin-right: 1em;
+}
+.couple img {
+	float:right;
+	display:block;
+	margin:0.5em;
+	max-width: 40%;
+}
+.couple-horizontal img {
+	display:block;
+	margin:0.5em auto;
+	max-width: 90%;
+	max-height: 250px;
+}
 		</style>
 	</head>
 	<body>
 		<textarea id="source">
+class: top 
 Produire des données en Sciences de l'Antiquité avec Perseids
-===  
+=== 
 
 .subtitle[Comment et pour quoi faire ?]
 
@@ -233,7 +250,7 @@ Produire des données en Sciences de l'Antiquité avec Perseids
 .author[Github/Twitter : @ponteineptique] 
 
 ---
-
+class: top
 # Objectifs
 
 - Présenter Perseids et les différents points qui font sa fondation
@@ -253,7 +270,23 @@ Produire des données en Sciences de l'Antiquité avec Perseids
 - Conclusion
 
 ---
+class: top
 
+Disclaimer
+==========
+
+![Je ne suis pas de Perseids](images/not-from-perseids.png)
+
+???
+
+- Avant toute chose, je souhaiterai avertir quant à mes compétences. 
+- Je ne suis pas un développeur actuel de Perseids. 
+- Je travaille avec cet outil pour le Treebank
+- je collabore avec leurs développeuses et développeur
+- Une bonne partie des logiciels utilisés comme base sont de moi, sauf Sosol
+
+---
+class: top
 # Qu'est-ce que Perseids ?
 
 ## Administrativement
@@ -277,21 +310,6 @@ Contexte Nord-Américain (minor, major, carrières diverses)
 
 ---
 class: top
-
-Disclaimer
-==========
-
-![Je ne suis pas de Perseids](images/not-from-perseids.png)
-
-???
-
-- Avant toute chose, je souhaiterai avertir quant à mes compétences. 
-- Je ne suis pas un développeur actuel de Perseids. 
-- Je travaille avec cet outil pour le Treebank
-- je collabore avec leurs développeuses et développeur
-- Une bonne partie des logiciels utilisés comme base sont de moi, sauf Sosol
-
----
 ## Comment fonctionne la publication d'un article universitaire
 
 .left[![http://thescipub.com/](images/thescipub-workflow.png)]
@@ -445,6 +463,7 @@ class: top
 ```
 
 ---
+class: top
 ## Les standards
 
 Les standards concernent différents aspects des données : leur forme et leur mode d'accès.
@@ -461,7 +480,7 @@ Et quelques formats :
 - RDF (Turtle, XML, N3, etc.)
 
 ---
-
+class: top
 Les outils de Perseids
 ======================
 
@@ -470,7 +489,7 @@ Les outils de Perseids
 3. Annoter
 
 ---
-
+class: top
 Éditer [1]
 ==========
 
@@ -484,7 +503,7 @@ Les outils de Perseids
 - Enseignement de la TEI, d'Epidoc
 
 ---
-
+class: top
 Éditer [2]
 ==========
 
@@ -493,7 +512,7 @@ Les outils de Perseids
 .left[![](images/Perseids_epi_cts_identifiers_-_editxml_-_2017-04-10_16.31.06.png)]
 
 ---
-
+class: top
 Éditer [3]
 ==========
 
@@ -514,7 +533,7 @@ Les outils de Perseids
 ```
 
 ---
-
+class: top
 Éditer [4]
 ==========
 
@@ -537,7 +556,6 @@ Ici dans le cadre d'une édition, c'est la possibilité de travailler avec un sy
 
 ---
 class: top, workflow-with-logo
-
 Analyser [1]
 ===========
 
@@ -560,11 +578,10 @@ Si le concept de treebank est "universel", les grammaires, les ensembles de marq
 
 ???
 
-Problème des grammaires. Il est possible, et facile techniquement, de produire une grammaire
+Problème des grammaires. Il est possible, et facile techniquement, de produire une grammaire. En projet à Lyon
 
 ---
 class: top
-
 Analyser [3]
 ============
 
@@ -1618,6 +1635,7 @@ Annoter [4]
 3. Sparql (Pour interroger la base originale)
 
 ---
+class: top
 Perseids, pour quoi faire ?
 ===========================
 
@@ -1644,6 +1662,7 @@ Perseids, pour quoi faire ?
 - 
 
 ---
+class: top
 Produire : Valorisation
 =======================
 
@@ -1657,10 +1676,11 @@ Catégories d'exploitation et possibilités :
 - Lecture de textes, de traductions, de commentaires -> Edition
 
 ---
+class: top
 Valorisation : Journey of the Hero
 ==================================
 
-[Journey of the Hero](http://joth.perseids.org/joth.html)
+[Journey of the Hero](http://joth.perseids.org/joth.html) - [Source API](https://github.com/perseids-project/perseids-client-apps-joth) - [Source UI](https://github.com/perseids-project/gapvis/tree/joth)
 
 - Fonctionne avec [Pleiades](https://pleiades.stoa.org/)
 - Réutilise uniquement des données ouvertes
@@ -1668,6 +1688,7 @@ Valorisation : Journey of the Hero
 - Reseau social = Annotations
 
 ---
+class: top
 Valorisation : Aperire
 ==================================
 
@@ -1682,6 +1703,7 @@ Valorisation : Aperire
 - Montrer le code source
 
 ---
+class: top
 Produire : Aider à la production d'autres données [1]
 =====================================================
 
@@ -1696,6 +1718,7 @@ Utilisations :
 - Productions de données linguistiques (lemmatisation, entités nommées, etc.)
 
 ---
+class: top
 Produire : Aider à la production d'autres données [2]
 =====================================================
 
@@ -1708,33 +1731,87 @@ Problème : le machine learning a besoin de BEAUCOUP de données.
 Attention : machine learning supervisé !
 
 ---
+class: top
 Produire : Aider à la production d'autres données [3]
+=====================================================
+
+- [Stover, J. & Kestemont, M., ‘The Authorship of the Historia Augusta: Two new computational studies’. In: Bulletin of the Institute of Classical Studies 59:2 (2016), pp. 140–157 [Digital Classics themed issue]. DOI: 10.1111/j.2041-5370.2016.12043.x](http://onlinelibrary.wiley.com/doi/10.1111/j.2041-5370.2016.12043.x/full)
+- [Stover, J.; Winter, Y.; Koppel, M. & Kestemont, M. ‘Computational Authorship Verification Method Attributes New Work to Major 2nd Century African Author’. In: Journal of the American Society for Information Science and Technology 67:1 (2016), pp. 239–242.](http://onlinelibrary.wiley.com/doi/10.1002/asi.23460/abstract)
+- [Stover, J.A. & Kestemont, M., ‘Reassessing the Apuleian Corpus: A Computational Approach to Authenticity’, The Classical Quarterly 66:2 (2017), 645–672.](doi:10.1017/S0009838816000768)
+- [Kestemont, M., Stover, J., Koppel, M., Karsdorp, K. & Daelemans, W., ‘Authenticating the writings of Julius Caesar’. In: Expert Systems with Applications 63 (2016): pp. 86–96](http://www.sciencedirect.com/science/article/pii/S0957417416303116)
+
+---
+class: top
+Produire : Aider à la production d'autres données [4]
 =====================================================
 
 [OCRiser des manuscrits](https://graal.hypotheses.org/786)
 
-![](images/Homemade_manuscript_OCR_\(1\)_OCRopy_Sacré_Gr@@l_-_2017-04-11_17.46.07.png)
+![](images/Homemade_manuscript_OCR_OCRopy_Sacré_Gr@@l_-_2017-04-11_17.46.07.png)
 
 ---
-Produire : Aider à la production d'autres données [3]
+class: top
+Produire : Aider à la production d'autres données [5]
 =====================================================
 
-Entraîner un lemmatiseur : 
+## Entraîner un lemmatiseur : 
 
 - [Réutiliser les données de Perseids](https://github.com/PonteIneptique/training-pandora-latin-tb)
 - [Pandora](https://github.com/hipster-philology)
+- [Mike Kestemont, Jeroen De Gussem. Integrated Sequence Tagging for Medieval Latin Using Deep Representation Learning . 2016.<hal-01283083>](https://hal.archives-ouvertes.fr/hal-01283083/document)
+
+## Pourquoi ?
+
+1. Un ordinateur ne sait pas que `lascivi = lascivus`
+2. Améliorer la recherche plein texte
+3. Améliorer les [analyses statistiques](http://www.perseus.tufts.edu/hopper/wordfreq?lang=la&lookup=lascivus)
 
 ---
+class: top
+Produire : Aider à la production d'autres données [5 bis]
+=====================================================
+
+![](images/lemmatized.png)
+
+---
+class: top
 Produire : Analyse de la langue
 ===============================
 
 - [Différentes analyses du langages : distance entre les mots](https://github.com/PonteIneptique/thesis/blob/master/1%20-%20Syntax.ipynb)
 
+Latin / Francais
+.couple[
+	![](images/latin.count.png.png)
+	![](images/french.count.png)
+]
+
 ---
+class: top
+Produire : Analyse de la langue [2]
+===================================
+
+Latin / Francais
+.couple-horizontal[
+	![](images/latin.distance.png)
+	![](images/french.distance.png)
+]
+
+---
+class: top
 Produire : Valeur sémantique : daimon
 =====================================
 
 ---
+class: top
+Produire : Avertissement
+========================
+
+- Tentation toujours existante d'appliquer tous les algorytmes
+-
+
+---
+class: top
 Produire : Exemples de sujets résolus [1]
 =========================================
 
@@ -1743,6 +1820,7 @@ Plato’s writings, although they are carefully crafted, are meant to sound conv
 Write a short paper (1000-1500 words) discussing this question and using your treebanks as evidence (insert links to specific treebanks as references, or use statistics and other such data derived from your trees)
 
 ---
+class: top
 Produire : Exemples de sujets résolus [2]
 =========================================
 
@@ -1753,6 +1831,7 @@ Fourth–century  Attic epitaphs are composed in dactylic hexameters, elegiac co
 - What does this data reveal about the status of these “awkward” metrical patterns?
 
 ---
+class: top
 Produire : Exemples de sujets probables
 =======================================
 
@@ -1762,6 +1841,7 @@ Produire : Exemples de sujets probables
 - Quels sont
 
 ---
+class: top
 Conclusion [1]
 ==========
 
@@ -1778,7 +1858,7 @@ Mais surtout, il peut s'avérer une três bonne ressource
 - dans le cadre d'un projet collaboratif
 
 ---
-
+class: top
 Conclusion [2]
 ==============
 

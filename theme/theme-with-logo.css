@@ -213,3 +213,19 @@ p {
 	float:left;
 	margin-right: 1em;
 }
+.right img {
+	float:right;
+	margin-right: 1em;
+}
+.couple img {
+	float:right;
+	display:block;
+	margin:0.5em;
+	max-width: 40%;
+}
+.couple-horizontal img {
+	display:block;
+	margin:0.5em auto;
+	max-width: 90%;
+	max-height: 250px;
+}

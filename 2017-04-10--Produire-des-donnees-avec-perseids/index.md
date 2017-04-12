@@ -86,6 +86,7 @@ class: top
 - Application Programming Interface, Interface de Programmation 
 - Utilisé par les machines pour communiquer avec des machines
 
+![https://www.slideshare.net/DrupalSib/form-api-drupal-8-form-and-ajax](images/form-api-drupal-8-form-and-ajax-14-638.jpg)
 ???
 
 Je parlerai souvent d'API dans le contexte de ma présentation aussi il me semble normal d'introduire ce concept en amont.
@@ -1456,7 +1457,8 @@ Valorisation : Aperire
 - Fonctionne avec Arethusa
 - Très simple à mettre en place en "bricolant"
 
-??? 
+
+???
 
 - Expliquer Heroku
 - Montrer le code source
@@ -1558,16 +1560,102 @@ Latin / Francais
 
 ---
 class: top
-Produire : Valeur sémantique : daimon
-=====================================
+Valeur sémantique : δαιμόνιον [1]
+=================================
+
+.left[
+	![LouwNida](./images/Louw-Nida800.jpg)
+]
+
+#### Matthew Munson, *Biblical Semantics: Applying Digital Methods for Semantic Information Extraction to Current Problems in New Testament Studies*, unpublished dissertation (ThD dissertation, Theologische Fakultät, Universität Leipzig, 2017
+
+
+- Classer automatiquement des mots et leurs similarités, et comparer ce résultat avec le Louw-Nida
+- "The most precise way of determining a word's meaning is by investigating the meanings of the words that occur along with that word.", Harris, 1986
+
+---
+class: top
+Valeur sémantique : δαιμόνιον [2]
+=================================
+
+#### Comprendre un mot par son contexte : 3 occurences de tribades
+
+- L'autre homme demanda ce qui avait généré les tribades et les mous (*molles*) \[...\] (Phèdre, Fables 4.16)
+- Philaenis la tribade trouvait viril de lécher les cons. (Martial, 7.67)
+- Philaenis, tribade parmi les plus grandes tribades, tu as raison d'appeler ton amie (*amicam*) celles que tu baises. (Martial, 7.70)
+
+???
+
+Quand on apprend une langue, y compris sa langue maternelle, on est capable de comprendre, au moins un peu, son sens
+
+\[Prométhée ivre a attaché un sexe masculin à un corps de femme\]
+
+---
+class: top
+Valeur sémantique : δαιμόνιον [2]
+=================================
+
+- δαιμόνιονn n'appartient qu'à un sous-domaine sémantique, “12.1-42 A Supernatural Beings,”. Mais sa similarité moyenne dans ce sous-domaine est de 0.0727, qui, comparé à un score moyen sur l'ensemble du corpus de 0.6241, est le score le plus faible pour un mot occurant plus de 50 fois et qui n'appartient quà un sous-domaine.
+
+
+| Domain                            | Moy    | Z-Score  |
+| --------------------------------- | ------ | -------- |
+| 2 Natural Substances              | 0.0374 | -0.3182  |
+| 3 Plants                          | 0.0347 | -0.3924  |
+| 4 Animals                         | 0.0471 | -0.0591  |
+| 9 People                          | 0.0570 | 0.2031   |
+| 12 Supernatural Beings and Powers | 0.0716 | 0.5958   |
+
+---
+class: top
+Valeur sémantique : δαιμόνιον [3]
+=================================
+
+|                                     |  CS Score with δαιμόνιον  |   Standard Score |
+| ----------------------------------- | ------------------------- | ---------------- |
+| ἄρχων (supernatural power)          |          0.4529           |          10.7832 |
+| δαιμονίζομαι (be demon possessed)   |          0.2426           |           5.1638 |
+| νόσος (sickness)                    |          0.2357           |           4.9794 |
+| ἄρρωστος (ill)                      |          0.2228           |           4.6347 |
+| κάρφος (splinter, speck)            |          0.2097           |           4.2846 |
+| ἀκάθαρτος (unclean spirit)          |          0.1936           |           3.8544 |
+| ὄνομα (name)                        |          0.1904           |           3.7689 |
+| μαλακία (sickness)                  |          0.1809           |           3.5151 |
+| λεπρός (leper)                      |          0.1792           |           3.4696 |
+| βάτραχος (frog)                     |          0.1757           |           3.3761 |
+
+???
+
+Peut-être un domaine sémantique des maladies ?
+
+---
+class: top
+Valeur sémantique : δαιμόνιον [4]
+=================================
+
+#### Pré-requis
+
+1. Un texte disponible
+2. Un texte lemmatisé
+3. Des connaissances en programmation
+4. Mais surtout des connaissances en statistiques
+
+#### Impact et intérêt
+
+Sans donner de réponse définitive, introduire de nouvelles idées
 
 ---
 class: top
 Produire : Avertissement
 ========================
 
-- Tentation toujours existante d'appliquer tous les algorytmes
--
+- Tentation toujours existante d'appliquer tous les algorithmes sans prendre en compte le contexte ("durée" du corpus, genres, religions, objectifs)
+- Les paramètres d'un algorithme peut grandement changer son résultat : lire à propos des algorithmes !
+- Faire attention à l'analyse non-supervisée (Topic Modelling) : quelle est la signification d'un topic ?
+- Les algorithmes sont tout autant de biais que la culture d'un-e chercheur-se, sa mémoire : le numérique n'est pas plus vérité.
+
+???
+pistes euristique
 
 ---
 class: top
@@ -1595,9 +1683,8 @@ Produire : Exemples de sujets probables
 =======================================
 
 - Quelle est la différence entre les réseaux des différentes Médées ?
-- Comment change les charactérisations des personnages principaux au fil de l'évolution du texte ?
+- Comment change les charactérisations des personnages principaux au fil de l'évolution d'un texte ?
 - Quelles actions subissent et produisent les personnages d'un texte ?
-- Quels sont
 
 ---
 class: top
